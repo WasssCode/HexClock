@@ -4,8 +4,9 @@
 	<title>Hex Clock</title>
 	<link rel="shortcut icon" type="image/png" href="http://persepolisexchange.com/Content/images/clock/favicon.png"/>
 </head>
-<body id="timeColor">
-<center><span id="time" style="font-size: 100px;">0</span></center>
+<body id="timeColor" style="text-align: center;">
+<p id="time" style="font-size: 100px;">0</p>
+<p style="font-size: 25px;">This clock uses the hexadecimal value of the seconds in this year to change the backgorund color.</p>
 <script type="text/javascript">
 	var time = new Date();
 	setInterval(function() {
