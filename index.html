@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hex Clock</title>
+	<link rel="shortcut icon" type="image/png" href="http://persepolisexchange.com/Content/images/clock/favicon.png"/>
+</head>
+<body id="timeColor">
+<center><span id="time" style="font-size: 100px;">0</span></center>
+<script type="text/javascript">
+	var time = new Date();
+	setInterval(function() {
+		//How many seconds have passed in the current year.
+		var yearTime = Math.round(((((((Date.now() / 1000) / 60) / 60) / 24) / 365) - (time.getFullYear() - 1970)) * 31536000);
+		//How many seconds have passed in the current year in hexadecimal.
+		yearTimeHex = yearTime.toString(16);
+		//Updates time on the HTML page.
+		document.getElementById("time").innerHTML = "#" + yearTimeHex;
+		//Updates the color of the HTML page.
+		document.body.style.backgroundColor = "#" + yearTimeHex;
+	}, 10);	
+</script>
+</body>
+</html>
