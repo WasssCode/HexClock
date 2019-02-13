@@ -23,5 +23,15 @@ function updateClock() {
 
 	var timeOutput = hours + ":" + minutes + ":" + seconds;
 	document.getElementById("currentTime").innerHTML = "<br>" + timeOutput;
+
+	var red = yearTimeHex[0] + yearTimeHex[1];
+	var green = yearTimeHex[2] + yearTimeHex[3];
+	var blue = yearTimeHex[4] + yearTimeHex[5];
+
+	if ((red * 0.299) + (green * 0.587) +  (blue * 0.114) > 182) {
+		document.getElementById("body").style.color = "#000000";
+	} else {
+		document.getElementById("body").style.color = "#ffffff";
+	}
 }
 setInterval(updateClock, 1000);
