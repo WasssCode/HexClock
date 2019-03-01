@@ -4,7 +4,7 @@ function updateClock() {
 	yearTimeHex = yearTime.toString(16);
 	yearTimeBinary = yearTime.toString(2);
 	yearTimeOctal = yearTime.toString(8);
-	document.getElementById("clock").innerHTML = "#" + yearTimeHex; 
+	document.getElementById("clock").innerHTML = "#" + yearTimeHex;
 	document.getElementById("others").innerHTML = "<br>Binary: " + yearTimeBinary + "<br>Octal: " + yearTimeOctal + "<br> Decimal: " + yearTime;
 	document.body.style.backgroundColor = "#" + yearTimeHex;
 
@@ -18,17 +18,17 @@ function updateClock() {
 	if (hours > 12) {
 		hours = Math.abs(hours - 12);
 		seconds += " PM";
-	} else 
+	} else
 		seconds += " AM";
 
 	var timeOutput = hours + ":" + minutes + ":" + seconds;
 	document.getElementById("currentTime").innerHTML = "<br>" + timeOutput;
 
-	var red = parseInt(yearTimeHex[0] + yearTimeHex[1]);
-	var green = parseInt(yearTimeHex[2] + yearTimeHex[3]);
-	var blue = parseInt(yearTimeHex[4] + yearTimeHex[5]);
+	var red = parseInt(yearTimeHex[0], 10);
+	var green = parseInt(yearTimeHex[2], 10);
+	var blue = parseInt(yearTimeHex[4], 10);
 
-	if ((red * 0.299) + (green * 0.587) +  (blue * 0.114) > 182) {
+	if ((red * 0.299) + (green * 0.587) +  (blue * 0.114) > 8.2) {
 		document.getElementById("body").style.color = "#000000";
 	} else {
 		document.getElementById("body").style.color = "#ffffff";
